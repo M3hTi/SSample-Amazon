@@ -122,7 +122,22 @@ function showProducts(arr) {
         buyButton.className = 'buy-button'
         buyButton.textContent = 'Buy'
         productInfo.appendChild(buyButton)
-        
+
+        buyButton.addEventListener('click', () => {
+            // console.log(element);
+            const id = element.id
+            const name = element.name
+            const price = element.priceCents
+            const image = element.image
+            const quantity = select.value
+            const product = new Product(name, price, image, quantity, id)
+            // console.log(product);
+            cart.add(product)
+            cart.calculateTotal()
+            document.querySelector('.cart-count').textContent = cart.products.length
+            console.log(cart);
+        })
+            
         productsContainer.appendChild(productCard)
     });
 }
@@ -157,7 +172,7 @@ function showImagesOnHeader(arr) {
 
     nextButton.addEventListener('click', showNextImage)
 
-    console.dir(carouselContainer)
+    // console.dir(carouselContainer)
 
 
     function showPreviousImage(){
