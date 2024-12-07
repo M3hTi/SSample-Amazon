@@ -1,4 +1,7 @@
 /* Reset and Base Styles */
+html{
+    scroll-behavior: smooth;
+}
 * {
     margin: 0;
     padding: 0;
@@ -385,6 +388,13 @@ nav ul li:hover {
 
 .back-to-top:hover {
     background-color: #485769;
+}
+
+.back-to-top-link {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
 }
 
 .footer-content {
