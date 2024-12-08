@@ -6,6 +6,10 @@ const searchInput = document.querySelector('#js-search')
 const searchButton = document.querySelector('#js-search-btn')
 
 
+const shopIcon = document.querySelector('.cart')
+
+
+
 
 
 // location of imagess of header
@@ -29,6 +33,7 @@ function init(){
         showProducts(data)
         searchButton.addEventListener('click', (e) => searchProduct(e, data))
         searchInput.addEventListener('keydown', (e) => searchProduct(e, data))
+        shopIcon.addEventListener('click', showCart)
     })
     .catch(error => {
         console.log(error)
@@ -205,5 +210,61 @@ function searchProduct(e, data) {
     }
 }
 
+
+function showCart() {
+    // Remove existing cart if present
+    // const existingCart = document.querySelector('.cart-container')
+    // if (existingCart) existingCart.remove()
+
+
+    const cartContainer = document.createElement('div')
+    cartContainer.className = 'cart-container'
+
+    // Create close button
+    const closeButton = document.createElement('button')
+    closeButton.className = 'close-cart'
+    closeButton.innerHTML = '×'
+
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(cartContainer)
+    })
+    cartContainer.appendChild(closeButton)
+
+    cart.products.forEach(product => {
+        const productCard = document.createElement('div')
+        productCard.className = 'product-card'
+
+        // Product Image Container
+        const productImageContainer = document.createElement('div')
+        productImageContainer.className = 'product-image'
+        
+        const productImage = document.createElement('img')
+        productImage.src = product.image
+        productImage.alt = product.name
+        productImageContainer.appendChild(productImage)
+        productCard.appendChild(productImageContainer)
+
+        // Product Info Container
+        const productInfo = document.createElement('div')
+        productInfo.className = 'product-info'
+
+        const title = document.createElement('h5')
+        title.textContent = product.name
+        productInfo.appendChild(title)
+
+        const price = document.createElement('p')
+        price.textContent = `$${(product.price / 100).toFixed(2)}`
+        productInfo.appendChild(price)
+
+        const quantity = document.createElement('p')
+        quantity.textContent = `Quantity: ${product.number}`
+        productInfo.appendChild(quantity)
+
+        productCard.appendChild(productInfo)
+        cartContainer.appendChild(productCard)
+    })
+
+    document.body.appendChild(cartContainer)
+}
 
 window.addEventListener('load', init)
