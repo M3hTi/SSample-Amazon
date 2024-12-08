@@ -140,7 +140,9 @@ function showProducts(arr) {
             cart.add(product)
             cart.calculateTotal()
             document.querySelector('.cart-count').textContent = cart.products.length
-            console.log(cart);
+            // console.log(cart);
+
+            localStorage.setItem('cart', JSON.stringify(cart))
         })
             
         productsContainer.appendChild(productCard)
