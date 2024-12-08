@@ -492,36 +492,37 @@ nav ul li:hover {
 
 /* Cart Page Styles */
 .cart-page-container {
-    min-height: 100vh;
+    min-height: calc(100vh - 100px);
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 40px 20px;
+    padding: 20px;
     background-color: #EAEDED;
 }
 
 .cart-content {
     width: 80%;
     max-width: 1200px;
-    background-color: #19294d;
+    background-color: white;
     border-radius: 8px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cart-product {
     display: flex;
     gap: 20px;
     padding: 20px;
-    border-bottom: 1px solid #2c3e50;
+    border-bottom: 1px solid #DDD;
 }
 
 .cart-product-image {
     width: 180px;
     height: 180px;
-    background: #2c3e50;
+    background: #F8F8F8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -542,49 +543,45 @@ nav ul li:hover {
 }
 
 .cart-product-info h3 {
-    color: #ffffff;
+    color: #0F1111;
     font-size: 18px;
     margin: 0;
 }
 
-.cart-product-info .stock {
-    color: #2ecc71;
-    margin: 0;
-}
-
 .cart-product-info .price {
-    color: #ffffff;
+    color: #B12704;
     font-size: 18px;
     font-weight: bold;
     margin: 0;
 }
 
 .cart-product-info .quantity {
-    color: #bdc3c7;
+    color: #565959;
 }
 
 .cart-total {
     text-align: right;
     padding: 20px;
-    color: #ffffff;
+    color: #0F1111;
     font-size: 24px;
-    border-top: 1px solid #2c3e50;
+    border-top: 1px solid #DDD;
 }
 
 .checkout-button {
-    background: #37a0f4;
-    color: white;
-    border: none;
-    padding: 15px 25px;
+    background: #FFD814;
+    border: 1px solid #FCD200;
+    color: #0F1111;
+    padding: 8px 10px;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
     align-self: flex-end;
     transition: background-color 0.2s;
+    box-shadow: 0 2px 5px rgba(213, 217, 217, .5);
 }
 
 .checkout-button:hover {
-    background: #2980b9;
+    background: #F7CA00;
 }
 
 /* Footer Styles */
