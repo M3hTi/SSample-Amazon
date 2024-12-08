@@ -264,6 +264,13 @@ function showCart() {
         cartContainer.appendChild(productCard)
     })
 
+    // Add View Cart link
+    const viewCartLink = document.createElement('a')
+    viewCartLink.href = 'cart.html'
+    viewCartLink.className = 'view-cart-link'
+    viewCartLink.textContent = 'View shopping cart'
+    cartContainer.appendChild(viewCartLink)
+
     document.body.appendChild(cartContainer)
 }
 
