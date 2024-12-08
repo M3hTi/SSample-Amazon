@@ -5,9 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - Amazon Clone</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <div class="cart-page-container">
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="logo">
+                <img src="images/amazon-logo-white.png" alt="Amazon">
+            </a>
+            <div class="location">
+                <i class="fa-solid fa-location-dot"></i>
+                <div class="location-text">
+                    <p>Deliver to</p>
+                    <h3>United States</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-search">
+            <input type="text" id="search" placeholder="Search Amazon">
+            <button id="search-button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <div class="header-right">
+            <div class="nav-item">
+                <p>Hello, sign in</p>
+                <h3>Account &amp; Lists</h3>
+            </div>
+            <div class="nav-item">
+                <p>Returns</p>
+                <h3>& Orders</h3>
+            </div>
+            <div class="nav-item cart">
+                <span class="cart-count">0</span>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><i class="fa-solid fa-bars"></i> All</li>
+            <li>Today's Deals</li>
+            <li>Customer Service</li>
+            <li>Registry</li>
+            <li>Gift Cards</li>
+            <li>Sell</li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="cart-page-container">
         <!-- <div class="cart-content">
            
             <div class="cart-product">
@@ -29,7 +81,8 @@
             
             <button class="checkout-button">Proceed to Checkout</button>
         </div> -->
-    </div>
+    </main>
+
     <script src="scripts/checkout.js"></script>
 </body>
 </html>
